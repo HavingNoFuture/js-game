@@ -27,7 +27,7 @@ class Actor {
 		this.size = size;
 		this.speed = speed;
 
-		if (!(pos instanceof Vector) || !(size instanceof Vector) || !(speed instanceof Vector)) {
+		if (!(this.pos instanceof Vector) || !(this.size instanceof Vector) || !(this.speed instanceof Vector)) {
 			throw new Error('Передан не обьект типа Vector */');
 		}
 
@@ -128,6 +128,7 @@ class Level {
 		if (!(pos instanceof Vector) || !(size instanceof Vector)) {
 			throw new Error('Передан не обьект типа Vector */');
 		}
+
 		const x = Math.floor(pos.x);
 		const y = Math.floor(pos.y);
 		const y2 = Math.ceil(pos.y + size.y);
@@ -138,6 +139,7 @@ class Level {
 		} else if (y2 > this.height) {
 			return 'lava';
 		}
+
 		for (let i = x; i < x2; i++) {
 			for (let j = y; j < y2; j++) {
 				if (this.grid[x][y] === 'wall') {
@@ -170,14 +172,16 @@ class Level {
 	playerTouched(type /* строка*/, actor /* Обьект типа Actor*/) {
 		if (this.status != null) {
 			return undefined;
-		} else {
-			if ((type === 'lava') || (type === 'fireball')) {
-				this.status = 'lost';
-			} else if ((type === 'coin') && (actor != undefined)) {
-					this.removeActor(actor);
-				if (this.noMoreActors('coin')) {
-					this.status = 'won';
-				}
+		}
+
+		if ((type === 'lava') || (type === 'fireball')) {
+			this.status = 'lost';
+		} 
+
+    if ((type === 'coin') && (actor != undefined)) {
+			this.removeActor(actor);
+			if (this.noMoreActors('coin')) {
+				this.status = 'won';
 			}
 		}
 	}
@@ -194,6 +198,7 @@ class LevelParser {
 		if ((symbol === undefined) || (this.dictActors === undefined)) {
 			return undefined;
 		} 
+    
 		if (symbol in this.dictActors) {
 			return this.dictActors[symbol];
 		} 
@@ -415,5 +420,9 @@ const parser = new LevelParser(actorDict);
 //			.then(() => alert('YOU WON!'));
 //	});
 
-runGame(schemas, parser, DOMDisplay)
-	.then(() => alert('YOU WON!'));
+
+loadLevels().then(levels => {
+  return runGame(JSON.parse(levels), parser, DOMDisplay)
+}).then(result => alert('Вы выиграли!'));
+// runGame(schemas, parser, DOMDisplay)
+// 	.then(() => alert('YOU WON!'));
