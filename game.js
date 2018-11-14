@@ -349,7 +349,7 @@ class Player extends Actor {
     super(posObjVector);
     this.pos = posObjVector.plus(new Vector(0, -0.5));
     this.speed = new Vector(0, 0);
-    this.size = new Vector(0.8, 1.5);
+    this.size = new Vector(1, 1.3);
   }
 
   get type() {
@@ -359,6 +359,102 @@ class Player extends Actor {
 
 
 const schemas = [
+
+    [
+      "  |  v                 ",
+      "                       ",
+      "                      ",
+      "                       ",
+      "                       ",
+      "                       ",
+      "  o                 o  ",
+      "  x               = x  ",
+      "  x          o o    x  ",
+      "  x  @       xxxxx  x  ",
+      "  xxxxx             x  ",
+      "      x!!!!!!!!!!!!!x  ",
+      "      xxxxxxxxxxxxxxx  ",
+      "                       "
+    ],
+    [
+      "        |           |  ",
+      "                       ",
+      "                       ",
+      "                       ",
+      "                       ",
+      "                       ",
+      "                       ",
+      "                       ",
+      "                       ",
+      "     |                 ",
+      "                       ",
+      "         =      |      ",
+      " @ |  o            o   ",
+      "xxxxxxxxx!!!!!!!xxxxxxx",
+      "                       "
+    ],
+    [
+      "                       ",
+      "                       ",
+      "                       ",
+      "    o                  ",
+      "    x      | x!!x=     ",
+      "         x             ",
+      "                      x",
+      "                       ",
+      "                       ",
+      "                       ",
+      "               xxx     ",
+      "                       ",
+      "                       ",
+      "       xxx  |          ",
+      "                       ",
+      " @                     ",
+      "xxx                    ",
+      "                       "
+    ], 
+    [
+      "   v         v",
+      "              ",
+      "         !o!  ",
+      "              ",
+      "              ",
+      "              ",
+      "              ",
+      "         xxx  ",
+      "          o   ",
+      "        =     ",
+      "  @           ",
+      "  xxxx        ",
+      "  |           ",
+      "      xxx    x",
+      "              ",
+      "          !   ",
+      "              ",
+      "              ",
+      " o       x    ",
+      " x      x     ",
+      "       x      ",
+      "      x       ",
+      "   xx         ",
+      "              "
+    ],
+    [
+      "     v                 ",
+      "                       ",
+      "                       ",
+      "                       ",
+      "  |                    ",
+      "    xx       w         ",
+      "  o                 o  ",
+      "  x               = x  ",
+      "  x          o o    x  ",
+      "  x  @    *  xxxxx  x  ",
+      "  xxxxx             x  ",
+      "      x!!!!!!!!!!!!!x  ",
+      "      xxxxxxxxxxxxxxx  ",
+      "                       "
+    ],
     [
       '                  =           =     ',
       '      v                             ',
@@ -368,7 +464,7 @@ const schemas = [
       ' @   xx  xx       o    |         v x',
       'xxx             xxxx       xxx      ',
       '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'
-      ],
+    ],
     [
       '                  v                 ',
       '@   =                             o ',
@@ -378,7 +474,7 @@ const schemas = [
       'o         o  xxx            o  xxx  ',
       'xxx      xxx        xxxxx           ',
       '!!!!!!!!!!!!!!!!!!!!!!!!!!!xxx!!!!!!'
-  ]
+    ]
 ];
 
 const actorDict = {
