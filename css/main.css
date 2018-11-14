@@ -3,7 +3,7 @@ hidden {
 }
 
 .background {
-  background: rgb(52, 166, 251);
+  background: rgb(153, 187, 255);
   table-layout: fixed;
   border-spacing: 0;
 }
@@ -13,11 +13,13 @@ hidden {
 }
 
 .fireball {
-  background: rgb(255, 100, 100);
+  background-image: url('fireball.png');
+  background-size: cover;
 }
 
 .lava {
-  background: rgb(255, 100, 100);
+  background-image: url('lava.png');
+  background-size: cover;
 }
 
 .elevator {
@@ -25,7 +27,8 @@ hidden {
 }
 
 .wall {
-  background: white;
+  background-image: url('wall.png');
+  background-size: cover;
 }
 
 .actor {
@@ -33,15 +36,17 @@ hidden {
 }
 
 .coin {
-  background: rgb(241, 229, 89);
+  background-image: url('coin.png');
+  background-size: cover;
 }
 
 .player {
-  background: rgb(64, 64, 64);
+  background-image: url('player.png');
+  background-size: 100% 100%;
 }
 
 .lost .player {
-  background: rgb(160, 64, 64);
+  background: rgb(255, 8, 4);
 }
 
 .won .player {
