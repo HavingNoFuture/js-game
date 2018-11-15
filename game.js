@@ -349,7 +349,7 @@ class Player extends Actor {
     super(posObjVector);
     this.pos = posObjVector.plus(new Vector(0, -0.5));
     this.speed = new Vector(0, 0);
-    this.size = new Vector(0.9, 1.15);
+    this.size = new Vector(0.8, 1.5);
   }
 
   get type() {
